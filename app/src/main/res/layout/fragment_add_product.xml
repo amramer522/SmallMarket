@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Add_Product_Fragment_Ll_Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Add_Product_Fragment_Til_Product_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d16"
+        android:layout_marginEnd="@dimen/d16"
+        android:layout_marginTop="@dimen/d10"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product id"
+            android:text="0" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Add_Product_Fragment_Til_Product_Name"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/d16"
+        android:layout_marginEnd="@dimen/d16"
+        android:layout_marginTop="@dimen/d10"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Product Name" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Add_Product_Fragment_Til_Product_Price"
+        android:layout_marginStart="@dimen/d16"
+        android:layout_marginEnd="@dimen/d16"
+        android:layout_marginTop="@dimen/d10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/Add_Product_Fragment_Btn_Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginTop="@dimen/d16"
+        android:background="@drawable/shape_btn"
+        android:textColor="@color/white"
+        android:text="Save" />
+
+
+</LinearLayout>
