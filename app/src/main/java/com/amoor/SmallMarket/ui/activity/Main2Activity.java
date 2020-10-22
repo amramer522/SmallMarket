@@ -1,12 +1,9 @@
-package com.amoor.el_rawda.ui.activity;
+package com.amoor.SmallMarket.ui.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
@@ -18,12 +15,12 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amoor.el_rawda.R;
-import com.amoor.el_rawda.data.model.Product;
-import com.amoor.el_rawda.helper.DBConnection;
-import com.amoor.el_rawda.helper.HelperMethods;
-import com.amoor.el_rawda.ui.fragment.AddProductFragment;
-import com.amoor.el_rawda.ui.fragment.HomeFragment;
+import com.amoor.SmallMarket.R;
+import com.amoor.SmallMarket.data.model.Product;
+import com.amoor.SmallMarket.helper.DBConnection;
+import com.amoor.SmallMarket.helper.HelperMethods;
+import com.amoor.SmallMarket.ui.fragment.AddProductFragment;
+import com.amoor.SmallMarket.ui.fragment.HomeFragment;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
@@ -31,11 +28,6 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static com.amoor.el_rawda.helper.DBConnection.COL_NAME;
-import static com.amoor.el_rawda.helper.DBConnection.COL_PRICE;
-import static com.amoor.el_rawda.helper.DBConnection.COL__PRO_ID;
-import static com.amoor.el_rawda.helper.DBConnection.TABLE_NAME;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -53,13 +45,6 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         ButterKnife.bind(this);
-//        Intent intent = getIntent();
-//        if (intent.hasExtra("edit"))
-//        {
-//            HelperMethods.replace(addProductFragment, getSupportFragmentManager(), R.id.Main2_Container);
-//            Product pro_details = intent.getExtras().getParcelable("pro_details");
-//            addProductFragment.EditProduct(pro_details);
-//        }
 
         HelperMethods.replace(homeFragment, getSupportFragmentManager(), R.id.Main2_Container, "HomeFragment");
         navigation.setSelectedItemId(R.id.navigation_home);
@@ -68,7 +53,6 @@ public class Main2Activity extends AppCompatActivity {
 
         db = new DBConnection(this);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -88,11 +72,7 @@ public class Main2Activity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String new_text) {
-//                ArrayList<Product> search_result = db.getSearch(new_text);
                 homeFragment.setSearchResult(new_text);
-//                Toast.makeText(Main2Activity.this, ""+new_text, Toast.LENGTH_SHORT).show();
-//                homeFragment.setSearchResult(search_result);
-
                 return true;
             }
         });
@@ -106,7 +86,6 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-//        super.onBackPressed();
         HomeFragment homeFragment1 = (HomeFragment) getSupportFragmentManager().findFragmentByTag("HomeFragment");
         AddProductFragment addProductFragment1 = (AddProductFragment) getSupportFragmentManager().findFragmentByTag("addProductFragment");
         if (homeFragment1 != null && homeFragment1.isVisible())

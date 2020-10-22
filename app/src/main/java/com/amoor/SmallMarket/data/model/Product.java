@@ -1,4 +1,4 @@
-package com.amoor.el_rawda.data.model;
+package com.amoor.SmallMarket.data.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -8,7 +8,6 @@
 
     >
 
-
         <TextView
             android:id="@+id/Item_Product_Tv_Product_id"
             android:layout_weight="1"

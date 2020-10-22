@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EL-Rawda</string>
+    <string name="app_name">Small Market</string>
     <string name="title_activity_home_cycle">HomeCycleActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

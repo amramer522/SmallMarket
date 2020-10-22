@@ -1,4 +1,4 @@
-package com.amoor.el_rawda.ui.fragment;
+package com.amoor.SmallMarket.ui.fragment;
 
 
 import android.os.Bundle;
@@ -10,18 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.amoor.el_rawda.R;
-import com.amoor.el_rawda.data.model.Product;
-import com.amoor.el_rawda.helper.DBConnection;
-import com.amoor.el_rawda.helper.HelperMethods;
+import com.amoor.SmallMarket.R;
+import com.amoor.SmallMarket.data.model.Product;
+import com.amoor.SmallMarket.helper.DBConnection;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-import static com.amoor.el_rawda.helper.HelperMethods.getTextFromTil;
-import static com.amoor.el_rawda.helper.HelperMethods.setTexttoTil;
+import static com.amoor.SmallMarket.helper.HelperMethods.getTextFromTil;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,10 +52,6 @@ public class AddProductFragment extends Fragment {
 
         db = new DBConnection(getContext());
 
-//        AddProductFragmentTilProductName = v.findViewById(R.id.Add_Product_Fragment_Til_Product_Name);
-//        AddProductFragmentTilProductPrice = v.findViewById(R.id.Add_Product_Fragment_Til_Product_Price);
-//        AddProductFragmentTilProductId = v.findViewById(R.id.Add_Product_Fragment_Til_Product_id);
-
         return v;
     }
 
@@ -67,34 +61,11 @@ public class AddProductFragment extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick(R.id.Add_Product_Fragment_Btn_Save)
-    public void onViewClicked() {
-        String pro_name = getTextFromTil(AddProductFragmentTilProductName);
-        String pro_price = getTextFromTil(AddProductFragmentTilProductPrice);
-        String pro_id = getTextFromTil(AddProductFragmentTilProductId);
-        if (!TextUtils.isEmpty(pro_name)
-                && !TextUtils.isEmpty(pro_price)
-                && !TextUtils.isEmpty(pro_id)) {
-            db.insertProductRow(getContext(), pro_id, pro_name, pro_price);
-
-            AddProductFragmentTilProductName.getEditText().setText("");
-            AddProductFragmentTilProductPrice.getEditText().setText("");
-            AddProductFragmentTilProductId.getEditText().setText("0");
-
-//            HelperMethods.replace(homeFragment, getActivity().getSupportFragmentManager(), R.id.Main2_Container, "HomeFragment");
-        }
-        else {
-            Toast.makeText(getContext(), "Write all information", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    public void setProductIDFromCamera(String productIDFromCamera)
-    {
+    public void setProductIDFromCamera(String productIDFromCamera) {
         AddProductFragmentTilProductId.getEditText().setText(productIDFromCamera);
     }
 
-    public void setTilToUpdate(String pro_id, String pro_name, String pro_price)
-    {
+    public void setTilToUpdate(String pro_id, String pro_name, String pro_price) {
 //        Toast.makeText(getContext()," hey from add product "+pro_id+"  "+pro_name+"  "+pro_price, Toast.LENGTH_SHORT).show();
 //        if (AddProductFragmentTilProductName!=null&&AddProductFragmentTilProductId!=null&&AddProductFragmentTilProductPrice!=null)
 //        {
@@ -111,10 +82,46 @@ public class AddProductFragment extends Fragment {
 
     }
 
-    public void EditProduct(Product pro_details)
-    {
+    public void EditProduct(Product pro_details) {
 //        AddProductFragmentTilProductName.getEditText().setText(pro_details.getPro_name());
 //        AddProductFragmentTilProductPrice.getEditText().setText(pro_details.getPro_price());
 //        AddProductFragmentTilProductId.getEditText().setText(pro_details.getPro_id());
+    }
+
+//    public void update_product(View v) {
+//        String pro_id = getTextFromTil(AddProductFragmentTilProductId);
+//        String pro_price = getTextFromTil(AddProductFragmentTilProductPrice);
+//        db.updateProduct(getContext(), pro_id, pro_price);
+//    }
+
+//    @OnClick({R.id.Add_Product_Fragment_Btn_Save, R.id.button})
+    @OnClick({R.id.Add_Product_Fragment_Btn_Save})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.Add_Product_Fragment_Btn_Save:
+                String pro_name = getTextFromTil(AddProductFragmentTilProductName);
+                String pro_price = getTextFromTil(AddProductFragmentTilProductPrice);
+                String pro_id = getTextFromTil(AddProductFragmentTilProductId);
+                if (!TextUtils.isEmpty(pro_name)
+                        && !TextUtils.isEmpty(pro_price)
+                        && !TextUtils.isEmpty(pro_id)) {
+                    db.insertProductRow(getContext(), pro_id, pro_name, pro_price);
+
+                    AddProductFragmentTilProductName.getEditText().setText("");
+                    AddProductFragmentTilProductPrice.getEditText().setText("");
+                    AddProductFragmentTilProductId.getEditText().setText("0");
+
+//            HelperMethods.replace(homeFragment, getActivity().getSupportFragmentManager(), R.id.Main2_Container, "HomeFragment");
+                }
+                else {
+                    Toast.makeText(getContext(), "Write all information", Toast.LENGTH_SHORT).show();
+                }
+                break;
+//            case R.id.button:
+//                String upro_id = getTextFromTil(AddProductFragmentTilProductId);
+//                String upro_price = getTextFromTil(AddProductFragmentTilProductPrice);
+//                db.updateProduct(getContext(), upro_id, upro_price);
+//                break;
+        }
     }
 }

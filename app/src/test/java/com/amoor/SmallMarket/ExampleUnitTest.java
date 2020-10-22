@@ -1,4 +1,4 @@
-package com.amoor.el_rawda;
+package com.amoor.SmallMarket;
 
 import org.junit.Test;
 

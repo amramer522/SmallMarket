@@ -1,20 +1,18 @@
-package com.amoor.el_rawda.ui.fragment;
+package com.amoor.SmallMarket.ui.fragment;
 
 
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.amoor.el_rawda.R;
-import com.amoor.el_rawda.adapter.ProductsAdapter;
-import com.amoor.el_rawda.data.model.Product;
-import com.amoor.el_rawda.helper.DBConnection;
+import com.amoor.SmallMarket.R;
+import com.amoor.SmallMarket.adapter.ProductsAdapter;
+import com.amoor.SmallMarket.data.model.Product;
+import com.amoor.SmallMarket.helper.DBConnection;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,6 @@
-package com.amoor.el_rawda.adapter;
+package com.amoor.SmallMarket.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,11 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.amoor.el_rawda.R;
-import com.amoor.el_rawda.data.model.Product;
-import com.amoor.el_rawda.ui.activity.DetailesActivity;
+import com.amoor.SmallMarket.R;
+import com.amoor.SmallMarket.data.model.Product;
 
 import java.util.ArrayList;
 
@@ -78,21 +74,21 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Hold> 
     }
 
     private void setAction(Hold hold, final int i) {
-        hold.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                Intent intent = new Intent(context, DetailesActivity.class);
-                intent.putExtra("product_details",all_products.get(i));
-                context.startActivity(intent);
-                ((Activity) context).finish();
-//                Toast.makeText(context, all_products.get(i).getPro_name(), Toast.LENGTH_SHORT).show();
-//                AddProductFragment addProductFragment = new AddProductFragment();
-//                Product product = all_products.get(i);
-//                HelperMethods.replace(addProductFragment, ((Main2Activity) context).getSupportFragmentManager(), R.id.Main2_Container);
-////                addProductFragment.setTilToUpdate(product.getPro_id(), product.getPro_name(), product.getPro_price());
-            }
-        });
+//        hold.view.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                Intent intent = new Intent(context, DetailesActivity.class);
+//                intent.putExtra("product_details",all_products.get(i));
+//                context.startActivity(intent);
+//                ((Activity) context).finish();
+////                Toast.makeText(context, all_products.get(i).getPro_name(), Toast.LENGTH_SHORT).show();
+////                AddProductFragment addProductFragment = new AddProductFragment();
+////                Product product = all_products.get(i);
+////                HelperMethods.replace(addProductFragment, ((Main2Activity) context).getSupportFragmentManager(), R.id.Main2_Container);
+//////                addProductFragment.setTilToUpdate(product.getPro_id(), product.getPro_name(), product.getPro_price());
+//            }
+//        });
     }
 
 }

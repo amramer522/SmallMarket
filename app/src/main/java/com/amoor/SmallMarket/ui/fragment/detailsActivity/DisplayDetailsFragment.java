@@ -1,4 +1,4 @@
-package com.amoor.el_rawda.ui.fragment.detailsActivity;
+package com.amoor.SmallMarket.ui.fragment.detailsActivity;
 
 
 import android.content.Intent;
@@ -10,20 +10,16 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.amoor.el_rawda.R;
-import com.amoor.el_rawda.data.model.Product;
-import com.amoor.el_rawda.helper.DBConnection;
-import com.amoor.el_rawda.ui.activity.DetailesActivity;
-import com.amoor.el_rawda.ui.activity.Main2Activity;
+import com.amoor.SmallMarket.R;
+import com.amoor.SmallMarket.data.model.Product;
+import com.amoor.SmallMarket.helper.DBConnection;
+import com.amoor.SmallMarket.ui.activity.Main2Activity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class DisplayDetailsFragment extends Fragment {
 
     @BindView(R.id.Display_Details_Fragment_Tv_ProductName)

@@ -1,6 +1,5 @@
-package com.amoor.el_rawda.helper;
+package com.amoor.SmallMarket.helper;
 
-import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

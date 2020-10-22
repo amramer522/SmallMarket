@@ -1,4 +1,4 @@
-package com.amoor.el_rawda.ui.fragment;
+package com.amoor.SmallMarket.ui.fragment;
 
 
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.amoor.el_rawda.R;
+import com.amoor.SmallMarket.R;
 
 /**
  * A simple {@link Fragment} subclass.
